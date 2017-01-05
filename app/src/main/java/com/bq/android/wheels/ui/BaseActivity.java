@@ -3,19 +3,34 @@ package com.bq.android.wheels.ui;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.bq.android.wheels.R;
 
 public class BaseActivity extends AppCompatActivity {
+    private LinearLayout mTitle;
+    private FrameLayout mContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
     }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {
-        super.setContentView(layoutResID);
+        View view = getLayoutInflater().inflate(R.layout.activity_base, null);
+        super.setContentView(view);
+
+        initView(layoutResID);
     }
+
+    private void initView(int layoutResID) {
+        mTitle = (LinearLayout) findViewById(R.id.title);
+        mContent = (FrameLayout) findViewById(R.id.content);
+        View view = getLayoutInflater().inflate(layoutResID, null);
+        mContent.addView(view, 0);
+    }
+
 }
