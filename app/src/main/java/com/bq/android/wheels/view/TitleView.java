@@ -1,5 +1,6 @@
 package com.bq.android.wheels.view;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.bq.android.wheels.R;
  */
 
 public class TitleView extends LinearLayout {
+    private static final String TAG = "TitleView";
 
     private ImageView mBackKey;
     private TextView mTitleText;
@@ -41,12 +43,28 @@ public class TitleView extends LinearLayout {
         mTitleText = (TextView) view.findViewById(R.id.title_text);
         mShareIcon = (ImageView) view.findViewById(R.id.share_icon);
 
+        mBackKey.setImageResource(R.mipmap.back_key);
+        mTitleText.setText(R.string.base_title);
+        mShareIcon.setImageResource(R.mipmap.share_icon);
+
         mBackKey.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((Activity) getContext()).finish();
             }
         });
+    }
+
+    public void setBackKeyListener(OnClickListener listener) {
+        mBackKey.setOnClickListener(listener);
+    }
+
+    public void setTitle(String title) {
+        mTitleText.setText(title);
+    }
+
+    public void setShareListener(OnClickListener listener) {
+        mShareIcon.setOnClickListener(listener);
     }
 
 }

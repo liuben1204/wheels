@@ -8,9 +8,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.bq.android.wheels.R;
+import com.bq.android.wheels.view.TitleView;
 
 public class BaseActivity extends AppCompatActivity {
-    private LinearLayout mTitle;
+    private TitleView mTitle;
     private FrameLayout mContent;
 
     @Override
@@ -27,7 +28,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void initView(int layoutResID) {
-        mTitle = (LinearLayout) findViewById(R.id.title);
+        mTitle = (TitleView) findViewById(R.id.title);
         mContent = (FrameLayout) findViewById(R.id.content);
         View view = getLayoutInflater().inflate(layoutResID, null);
         mContent.addView(view, 0);

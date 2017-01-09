@@ -1,3 +1,9 @@
 <resources>
+
+    <!-- 公共-->
     <string name="app_name">公共控件</string>
+    <string name="base_title">Title</string>
+    <!--公共-->
+
+
 </resources>
