@@ -1,8 +1,12 @@
 <resources>
 
     <!-- 公共-->
-    <string name="app_name">公共控件</string>
-    <string name="base_title">Title</string>
+    <string name="wheel_app_name">公共控件</string>
+    <string name="wheel_base_title">主界面</string>
+    <string name="wheel_network_error">网络连接不给力，点击重试</string>
+    <string name="wheel_data_error">没有数据</string>
+    <string name="wheel_server_error">服务器异常</string>
+    <string name="wheel_loading">加载中...</string>
     <!--公共-->
 
 

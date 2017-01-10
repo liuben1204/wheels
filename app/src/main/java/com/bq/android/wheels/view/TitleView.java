@@ -44,7 +44,7 @@ public class TitleView extends LinearLayout {
         mShareIcon = (ImageView) view.findViewById(R.id.share_icon);
 
         mBackKey.setImageResource(R.mipmap.back_key);
-        mTitleText.setText(R.string.base_title);
+        mTitleText.setText(R.string.wheel_base_title);
         mShareIcon.setImageResource(R.mipmap.share_icon);
 
         mBackKey.setOnClickListener(new OnClickListener() {

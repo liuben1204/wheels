@@ -1,14 +1,43 @@
 package com.bq.android.wheels.ui;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.os.Handler;
+import android.os.Message;
 
 import com.bq.android.wheels.R;
-import com.bq.android.wheels.WheelsApplication;
+import com.bq.android.wheels.utils.Constant;
+import com.bq.android.wheels.view.TransitionView;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
+
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case Constant.GET_DATA_SUCCESS:
+
+                    break;
+                case Constant.GET_DTATA_FAILED:
+
+                    break;
+                case Constant.NETWORK_ERROR:
+
+                    break;
+                case Constant.DATA_ERROR:
+
+                    break;
+                case Constant.SERVER_ERROR:
+
+                    break;
+                case Constant.STOP_LOADING:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +45,38 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
 
         initView();
+        setLoadingStatus(Constant.LOADING);
+        getDataFromServer();
     }
 
     private void initView() {
+        setReloadCallback(new ReloadCallback());
+    }
 
+    private void getDataFromServer(){
+
+    }
+
+
+    public class ReloadCallback implements TransitionView.IReloadCallback{
+        @Override
+        public void networkErrorReload() {
+
+        }
+
+        @Override
+        public void dataErrorReload() {
+
+        }
+
+        @Override
+        public void serverErrorReload() {
+
+        }
+
+        @Override
+        public void timeoutReload() {
+
+        }
     }
 }

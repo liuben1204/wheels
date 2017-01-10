@@ -11,11 +11,13 @@ import android.widget.LinearLayout;
 import com.bq.android.wheels.R;
 import com.bq.android.wheels.WheelsApplication;
 import com.bq.android.wheels.view.TitleView;
+import com.bq.android.wheels.view.TransitionView;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
 
     private TitleView mTitle;
+    private TransitionView mTransitionView;
     private FrameLayout mContent;
 
     @Override
@@ -33,6 +35,7 @@ public class BaseActivity extends AppCompatActivity {
 
     private void initView(int layoutResID) {
         mTitle = (TitleView) findViewById(R.id.title_layout);
+        mTransitionView = (TransitionView) findViewById(R.id.transition_view);
         mContent = (FrameLayout) findViewById(R.id.content);
         View view = getLayoutInflater().inflate(layoutResID, null);
         mContent.addView(view, 0);
@@ -48,6 +51,14 @@ public class BaseActivity extends AppCompatActivity {
 
     public void setShareIconListener(View.OnClickListener listener) {
         mTitle.setShareListener(listener);
+    }
+
+    public void setLoadingStatus(int flag){
+        mTransitionView.setStatus(flag);
+    }
+
+    public void setReloadCallback(TransitionView.IReloadCallback reloadCallback){
+        mTransitionView.setReloadCallback(reloadCallback);
     }
 
 }
