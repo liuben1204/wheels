@@ -1,7 +1,7 @@
 <resources>
 
     <!-- 公共-->
-    <string name="wheel_app_name">公共控件</string>
+    <string name="wheel_app_name">BQ轮子</string>
     <string name="wheel_base_title">主界面</string>
     <string name="wheel_network_error">网络连接不给力，点击重试</string>
     <string name="wheel_data_error">没有数据</string>

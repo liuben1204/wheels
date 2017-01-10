@@ -5,7 +5,7 @@
     <application
         android:name=".WheelsApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/wheel"
         android:label="@string/wheel_app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
