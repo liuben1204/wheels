@@ -59,7 +59,7 @@ public class TitleView extends LinearLayout {
         mBackKey.setOnClickListener(listener);
     }
 
-    public void setTitle(String title) {
+    public void setTitleText(String title) {
         mTitleText.setText(title);
     }
 

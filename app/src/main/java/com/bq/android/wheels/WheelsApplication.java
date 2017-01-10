@@ -1,6 +1,8 @@
 package com.bq.android.wheels;
 
 import android.app.Application;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 
 /**
  * Created by liuben on 17-1-5.
@@ -17,5 +19,19 @@ public class WheelsApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mWheelsApplication = this;
+    }
+
+    public int getUid() {
+        int uid = 0;
+        try {
+            PackageManager packageManager = mWheelsApplication.getPackageManager();
+            ApplicationInfo applicationInfo = packageManager.getApplicationInfo("com.bq.android.wheels",
+                    PackageManager.GET_ACTIVITIES);
+            uid = applicationInfo.uid;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return uid;
     }
 }
