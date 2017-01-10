@@ -3,6 +3,7 @@ package com.bq.android.wheels.ui;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.bq.android.wheels.R;
 import com.bq.android.wheels.utils.Constant;
@@ -54,29 +55,29 @@ public class MainActivity extends BaseActivity {
     }
 
     private void getDataFromServer(){
-
+        Log.d(TAG, "get data from server");
     }
 
 
     public class ReloadCallback implements TransitionView.IReloadCallback{
         @Override
         public void networkErrorReload() {
-
+            Log.d(TAG, "network error reload");
         }
 
         @Override
         public void dataErrorReload() {
-
+            Log.d(TAG, "data error reload");
         }
 
         @Override
         public void serverErrorReload() {
-
+            Log.d(TAG, "server error reload");
         }
 
         @Override
         public void timeoutReload() {
-
+            Log.d(TAG, "timeout error reload");
         }
     }
 }
