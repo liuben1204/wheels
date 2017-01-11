@@ -8,11 +8,15 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.bq.android.wheels.R;
+import com.bq.android.wheels.event.BaseEvent;
+import com.bq.android.wheels.utils.Constant;
 import com.bq.android.wheels.view.TitleView;
 import com.bq.android.wheels.view.TransitionView;
 import com.umeng.analytics.MobclickAgent;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
@@ -57,6 +61,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mTransitionView.setStatus(Constant.GONE);
         EventBus.getDefault().unregister(this);
     }
 
@@ -98,6 +103,11 @@ public class BaseActivity extends AppCompatActivity {
 
     public void showToast(String text) {
         Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(BaseEvent baseEvent) {
+
     }
 
 }

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
+import com.squareup.leakcanary.LeakCanary;
+
 /**
  * Created by liuben on 17-1-5.
  */
@@ -19,6 +21,10 @@ public class WheelsApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mWheelsApplication = this;
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
     }
 
     public int getUid() {

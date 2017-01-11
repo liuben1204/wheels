@@ -31,4 +31,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.umeng.analytics:analytics:latest.integration'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.5'
 }
