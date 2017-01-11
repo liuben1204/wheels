@@ -3,15 +3,16 @@ package com.bq.android.wheels.ui;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bq.android.wheels.R;
-import com.bq.android.wheels.WheelsApplication;
 import com.bq.android.wheels.view.TitleView;
 import com.bq.android.wheels.view.TransitionView;
+import com.umeng.analytics.MobclickAgent;
+
+import org.greenrobot.eventbus.EventBus;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
@@ -23,6 +24,40 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
@@ -53,12 +88,16 @@ public class BaseActivity extends AppCompatActivity {
         mTitle.setShareListener(listener);
     }
 
-    public void setLoadingStatus(int flag){
+    public void showLoadingStatus(int flag) {
         mTransitionView.setStatus(flag);
     }
 
-    public void setReloadCallback(TransitionView.IReloadCallback reloadCallback){
+    public void setReloadCallback(TransitionView.IReloadCallback reloadCallback) {
         mTransitionView.setReloadCallback(reloadCallback);
+    }
+
+    public void showToast(String text) {
+        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT).show();
     }
 
 }
