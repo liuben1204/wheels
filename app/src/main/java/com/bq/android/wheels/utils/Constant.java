@@ -20,6 +20,6 @@ public class Constant {
      * 获取数据的各种状态
      * */
     public static final int GET_DATA_SUCCESS = 6;
-    public static final int GET_DTATA_FAILED = 7;
+    public static final int GET_DATA_FAILED = 7;
 
 }

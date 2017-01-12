@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity {
                 case Constant.GET_DATA_SUCCESS:
 
                     break;
-                case Constant.GET_DTATA_FAILED:
+                case Constant.GET_DATA_FAILED:
 
                     break;
                 case Constant.NETWORK_ERROR:
