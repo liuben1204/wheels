@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.bq.android.wheels.view.TitleView
+    <com.bq.android.wheels.widget.TitleView
         android:id="@+id/title_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.bq.android.wheels.view.TransitionView
+        <com.bq.android.wheels.widget.TransitionView
             android:id="@+id/transition_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

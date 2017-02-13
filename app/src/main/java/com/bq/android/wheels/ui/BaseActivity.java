@@ -10,8 +10,8 @@ import android.widget.Toast;
 import com.bq.android.wheels.R;
 import com.bq.android.wheels.event.BaseEvent;
 import com.bq.android.wheels.utils.Constant;
-import com.bq.android.wheels.view.TitleView;
-import com.bq.android.wheels.view.TransitionView;
+import com.bq.android.wheels.widget.TitleView;
+import com.bq.android.wheels.widget.TransitionView;
 import com.umeng.analytics.MobclickAgent;
 
 import org.greenrobot.eventbus.EventBus;

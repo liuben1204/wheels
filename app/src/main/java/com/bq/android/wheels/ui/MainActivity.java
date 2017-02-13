@@ -7,7 +7,7 @@ import android.util.Log;
 
 import com.bq.android.wheels.R;
 import com.bq.android.wheels.utils.Constant;
-import com.bq.android.wheels.view.TransitionView;
+import com.bq.android.wheels.widget.TransitionView;
 
 public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";

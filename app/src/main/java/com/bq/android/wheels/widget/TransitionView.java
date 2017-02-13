@@ -1,4 +1,4 @@
-package com.bq.android.wheels.view;
+package com.bq.android.wheels.widget;
 
 import android.content.Context;
 import android.os.Handler;
