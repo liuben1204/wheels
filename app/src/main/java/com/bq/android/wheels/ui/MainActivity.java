@@ -6,6 +6,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.bq.android.wheels.R;
+import com.bq.android.wheels.patterns.factory.simple.Client;
 import com.bq.android.wheels.utils.Constant;
 import com.bq.android.wheels.widget.TransitionView;
 
@@ -45,9 +46,13 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Client.use();
+        com.bq.android.wheels.patterns.factory.method.Client.use();
+
         initView();
         showLoadingStatus(Constant.LOADING);
         getDataFromServer();
+
     }
 
     private void initView() {
