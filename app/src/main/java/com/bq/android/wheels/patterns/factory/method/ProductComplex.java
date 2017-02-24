@@ -1,4 +1,4 @@
-package com.bq.android.wheels.patterns.factory.simple;
+package com.bq.android.wheels.patterns.factory.method;
 
 import android.util.Log;
 
@@ -10,7 +10,7 @@ public class ProductComplex implements IProduct {
     private static final String TAG = "ProductComplex";
 
     @Override
-    public void produce() {
-        Log.i("simple", "simple factory produce complex product");
+    public void product() {
+        Log.i("method", "method factory produce complex product");
     }
 }
